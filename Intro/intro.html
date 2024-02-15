@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro | jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <div class="text">hellow</div>
+    <button id="btn">click me</button>
+    <!-- <button onclick="hideDiv()">click me</button> -->
+
+
+    <script>
+        // document.getElementById('text').innerHTML = 'Hello world by JavaScript!';
+
+        // $(document).ready(function(){
+        //     $('#text').text('Hello World by jQuery!');
+        // })
+
+        // const hideDiv = () => {
+        //     document.getElementsByClassName('text')[0].style.display = 'none';
+        // }
+
+        $(function () {
+            $('.text').text('Hello world by jQuery!');
+
+            $('#btn').click(function () {
+                $('.text').hide();
+            })
+        });
+
+    </script>
+</body>
+
+</html>

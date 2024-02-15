@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More on jQuery Selectors</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <ol type="1">
+        <li>index : 0 JavaScript</li>
+        <li>index : 1 PHP</li>
+        <li>index : 2 Python</li>
+        <li>index : 3 Kotlin</li>
+        <li>index : 4 Ruby on Rails</li>
+    </ol>
+        
+    <ol id="second" style="list-style: none; font-size: 1.5rem;">
+        <li>index : 0 JavaScript</li>
+        <li>index : 1 PHP</li>
+        <li>index : 2 Python</li>
+        <li>index : 3 Kotlin</li>
+        <li>index : 4 Ruby on Rails</li>
+    </ol>
+
+    <button id="btn">click me</button>
+
+
+    <script>
+
+        $(() => {
+            $('ol').css({ 'list-style': 'none', 'font-size': '1.5rem' });
+            $('#btn').css({ 'font-size': '1.3rem' });
+
+            $('#btn').click(()=>{
+                // $('li').css({'background-color' : 'yellow'});
+                // $('li:first').css({'background-color' : 'red'});
+                // $('li:first-child').css({'background-color' : 'red'});
+                // $('li:even').css({'background-color' : 'red'});
+                // $('li:odd').css({'background-color' : 'red'});
+                // $('#second li:odd').css({'background-color' : 'red'});
+                // $('ol:last li:odd').css({'background-color' : 'red'});
+                // $('ol:nth-child(2) li:odd').css({'background-color' : 'red'});
+                // $('#second li:nth-child(2)').css({'background-color' : 'red'});
+                // $('#second li:nth-last-child(2)').css({'background-color' : 'red'});
+                // $('[type]').css({'background-color' : 'yellow'});
+                $('ol:last li:nth-child(3)').css({'background-color' : 'blue'});
+            })
+        })
+
+    </script>
+</body>
+
+</html>
