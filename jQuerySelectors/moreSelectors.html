@@ -16,7 +16,7 @@
         <li>index : 3 Kotlin</li>
         <li>index : 4 Ruby on Rails</li>
     </ol>
-        
+
     <ol id="second" style="list-style: none; font-size: 1.5rem;">
         <li>index : 0 JavaScript</li>
         <li>index : 1 PHP</li>
@@ -34,7 +34,7 @@
             $('ol').css({ 'list-style': 'none', 'font-size': '1.5rem' });
             $('#btn').css({ 'font-size': '1.3rem' });
 
-            $('#btn').click(()=>{
+            $('#btn').click(() => {
                 // $('li').css({'background-color' : 'yellow'});
                 // $('li:first').css({'background-color' : 'red'});
                 // $('li:first-child').css({'background-color' : 'red'});
@@ -46,7 +46,8 @@
                 // $('#second li:nth-child(2)').css({'background-color' : 'red'});
                 // $('#second li:nth-last-child(2)').css({'background-color' : 'red'});
                 // $('[type]').css({'background-color' : 'yellow'});
-                $('ol:last li:nth-child(3)').css({'background-color' : 'blue'});
+                // $('ol:last li:nth-child(3)').css({'background-color' : 'blue'});
+                $('ol li:last-child').hide('slow');
             })
         })
 

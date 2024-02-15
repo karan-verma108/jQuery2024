@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events in jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni illo et asperiores, consectetur saepe praesentium,
+        provident iusto unde vitae eligendi corporis nemo laboriosam repellendus pariatur magnam, ratione nesciunt.
+        Laborum sapiente consequatur culpa ipsum mollitia sit facere deserunt, maiores natus, omnis corporis, fugit
+        iusto ducimus quis? Aliquid, velit enim ullam sint voluptates ut fugit similique incidunt saepe labore
+        temporibus. Officia sit sed hic facere fuga aliquid natus eius perferendis, nihil dolorum libero placeat a
+        blanditiis sint animi numquam suscipit. Placeat quibusdam, ipsa sint facere corporis quaerat porro provident
+        nobis exercitationem aliquid expedita odit ipsum eos, excepturi dolorum modi cumque sed impedit, tempora
+        consectetur mollitia itaque? Sed neque commodi ipsam, quas, quam natus quasi obcaecati, architecto dignissimos
+        veniam sint tenetur. Odit consequuntur nisi, similique dolor quam inventore suscipit explicabo voluptatem eos
+        cupiditate consectetur? Ullam fugit nobis quidem</p>
+
+    <button id="btn">click me</button>
+
+    <script>
+        $(() => {
+            $('#btn').click(() => {
+                $('p').css({ 'color': 'orange' });
+            })
+        })
+    </script>
+
+</body>
+
+</html>
