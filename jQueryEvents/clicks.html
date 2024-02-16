@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single and Double click in jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box first3"></div>
+        <div class="box first3"></div>
+        <div class="box first3"></div>
+        <div class="box next3"></div>
+        <div class="box next3"></div>
+        <div class="box next3"></div>
+    </div>
+
+    <button id="btn">click me</button>
+
+    <script>
+
+        $(() => {
+            $('.container').css({ 'display': 'flex' });
+            $('.box').css({ 'height': '200px', 'border': '2px solid black', 'width': '200px' });
+
+            $('#btn').click(() => {
+                $('.first3').css({ 'background-color': 'red' });
+            });
+
+            $('#btn').dblclick(() => {
+                $('.next3').css({ 'background-color': 'blue' });
+            });
+
+            $('#btn').click(() => {
+                $('.box').hide('slow');
+            });
+
+            $('#btn').dblclick(() => {
+                $('.box').show('slow');
+            });
+        });
+
+    </script>
+</body>
+
+</html>
