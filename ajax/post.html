@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using post to send data to server and displaying it</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <p id="output">this paragraph's content will be changed upon the click of this below button</p>
+    <button id="btn">click me😙</button>
+
+    <script>
+
+        $(() => {
+            $('#btn').click(() => {
+                $.post('new.php', {
+                    name: 'Karan',
+                    language: 'JavaScript'
+                }, (data, status) => {
+                    $('#output').html(data);
+                    alert(status);
+                })
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard events in jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <label>enter your name</label>
+    <input type="text" name="name">
+
+    <script>
+
+        $(() => {
+            $('input').keypress(function () {
+                let char = String.fromCharCode(event.which);
+                // $(this).css({ 'background-color': 'yellow' });
+                // $(this).css({ 'background-color': 'yellow' });
+                // $(this).css({ 'background-color': 'green' });
+                console.log('key released', char);
+            })
+        })
+
+    </script>
+</body>
+
+</html>
