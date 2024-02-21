@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus and Blur event in jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <input type="text">
+    <span id="showFocus">Welcome 😊</span>
+    <span id="showBlur">Take care 😀</span>
+
+    <script>
+
+        $(() => {
+            // $('span').css({ 'display': 'none' });
+            $('span').hide();
+
+            $('input').focus(() => {
+                // $('#showFocus').css({ 'display': 'inline' }).fadeOut(3000);
+                $('#showFocus').show().fadeOut(3000);
+            });
+            $('input').blur(() => {
+                // $('#showBlur').css({ 'display': "inline" }).fadeOut(3000);
+                $('#showBlur').show().fadeOut(3000);
+            });
+        });
+
+    </script>
+</body>
+
+</html>
