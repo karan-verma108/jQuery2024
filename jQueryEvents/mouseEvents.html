@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse events in jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi maxime harum libero, possimus nesciunt officiis
+        mollitia nisi eos sint facilis quo velit modi dicta odit quasi atque expedita odio sequi! Lorem ipsum dolor sit
+        amet consectetur adipisicing elit. Maiores, tenetur. Vero neque iste recusandae dolorum at amet atque velit
+        sapiente.</div>
+
+    <p></p>
+
+    <script>
+
+        $(() => {
+            $('div').css({ 'border': '2px solid black', 'margin-top': '70px', 'font-size': '2rem' })
+        });
+        $('div').mouseenter(function () {
+            $(this).css({ 'color': 'blue' });
+            $('p').html('Mouse has entered 😲');
+        });
+
+        $('div').mouseleave(function () {
+            $(this).css({ 'color': 'red' });
+            $('p').html('Mouse has left 😲');
+        });
+
+        $('div').mousedown(function () {
+            $(this).css({ 'color': 'white', 'background-color': 'black' });
+            $('p').html('Mouse is pressed down 😲');
+        });
+
+        $('div').mouseup(function () {
+            $(this).css({ 'color': 'black', 'background-color': 'white' });
+            $('p').html('Mouse is pressed up/or released 😲');
+        });
+
+        $('div').mouseover(function () {
+            $(this).css({ 'color': 'pink', 'background-color': 'blue' });
+            $('p').html('Mouse is over the element 😲');
+        });
+
+        $('div').mouseout(function () {
+            $(this).css({ 'color': 'blue', 'background-color': 'pink' });
+            $('p').html('Mouse is out of the element 😲');
+        });
+
+    </script>
+
+</body>
+
+</html>
