@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Effect in jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="red"></div>
+        <div class="red"></div>
+        <div class="red"></div>
+        <div class="blue"></div>
+        <div class="blue"></div>
+        <div class="blue"></div>
+    </div>
+    <button id="btn">click me</button>
+
+    <script>
+
+        $(() => {
+            $('.container').css({ 'display': 'flex' });
+            $('.red, .blue').css({ 'width': '200px', 'height': '150px', 'border': '2px solid black' });
+            $('.red').css({ 'background-color': 'red' });
+            $('.blue').css({ 'background-color': 'blue' });
+
+            $('#btn').click(() => {
+                $('.container').toggle('slow');
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
