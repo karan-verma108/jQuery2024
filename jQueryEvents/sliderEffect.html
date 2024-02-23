@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider effects in jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <p id="outLine">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe tenetur accusamus repellat.</p>
+    <p id="innerLine">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet facere iste quam harum quo
+        labore. Nesciunt, quaerat. Sed temporibus nemo, explicabo autem quos omnis velit nostrum. Neque, nam aspernatur!
+    </p>
+
+    <script>
+        $(() => {
+            $('p').css({ 'text-align': 'center' });
+            $('#outLine').css({ 'border': '1px solid black' });
+
+            $('#innerLine').css({ 'display': 'none', 'padding': '50px', 'background-color': 'gray' });
+            $('#outLine').click(() => {
+                // $('#innerLine').slideToggle();
+                $('#innerLine').slideDown('slow');
+            });
+            $('#outLine').dblclick(() => {
+                $('#innerLine').slideUp('slow');
+            });
+        });
+    </script>
+
+</body>
+
+</html>
