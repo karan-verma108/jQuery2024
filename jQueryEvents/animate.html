@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animate using jquery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #box {
+            position: relative;
+            background-color: greenyellow;
+            border-radius: 8px;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Jqyery animate method</h1>
+    <div id="box"></div>
+    <button id="btn">click me</button>
+
+    <script>
+
+        $(() => {
+            $('#btn').click(() => {
+                $('#box').animate({
+                    left: 500,
+                    width: 100 / 2,
+                    height: 100 / 2,
+                    opacity: 0.5,
+                }, 1000, function () {
+                    $(this).css({ 'background-color': 'red' });
+                });
+
+                $('#box').animate({
+                    top: 200
+                });
+
+                $('#box').animate({
+                    left: 0
+                });
+
+                $('#box').animate({
+                    top: 0,
+                    width: 100,
+                    height: 100,
+                    opacity: 1,
+                }, function () {
+                    $(this).css({ 'background-color': 'yellow' });
+                });
+
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
