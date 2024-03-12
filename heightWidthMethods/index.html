@@ -43,7 +43,7 @@
                 fetched_width += $('#box').width();
                 fetched_height += $('#box').height();
 
-                $('#width').val(fetched_width);
+                $('#width').val(fetched_width);  //sets the value of width input element
                 $('#height').val(fetched_height);
             });
 
@@ -54,8 +54,9 @@
                 new_width += $('#box2').width(800);
                 new_height += $('#box2').height(100);
 
-
-            })
+                let myWidth = $('#width').val(); //gives the value of width input element
+                alert(myWidth);
+            });
         });
 
     </script>
