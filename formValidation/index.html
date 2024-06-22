@@ -1,68 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form validation in jquery</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <form>
-        <div class="mb-3">
-            <label for="name" class="form-label">username</label>
-            <input type="text" class="form-control" id="name">
-            <div id="showError"></div>
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button id="btn" type="submit" class="btn btn-primary">Submit</button>
+      <div class="mb-3">
+        <label for="name" class="form-label">username</label>
+        <input type="text" class="form-control" id="name" />
+        <div id="showError"></div>
+      </div>
+      <div class="mb-3">
+        <label for="inputPassword" class="form-label">Password</label>
+        <input type="text" class="form-control" id="inputPassword" />
+        <div id="showPasswordError"></div>
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      </div>
+      <button id="btn" type="submit" class="btn btn-primary">Submit</button>
     </form>
 
     <script>
+      $(() => {
+        $('#btn').click(() => {
+          let enteredName = $('#name').val();
+          let inputPassword = $('#inputPassword').val();
 
-        $(() => {
-            $('#btn').click(() => {
-                let enteredName = $('#name').val();
+          if (enteredName.length === 0) {
+            $('#showError').html('**username must be filled');
+            $('#showError').css({ color: 'red' });
+          }
 
-                if (enteredName == '') {
-                    $('#showError').html('**username must be filled');
-                    $('#showError').css({ 'color': 'red' });
-                    return false;
-                }
+          if (enteredName.length <= 2 || enteredName.length >= 26) {
+            $('#showError').html('**username must be between 3 and 26');
+            $('#showError').css({ color: 'red' });
+            return false;
+          }
 
-                if ((enteredName.length <= 2 || enteredName.length >= 26)) {
-                    $('#showError').html('**username must be between 3 and 26');
-                    $('#showError').css({ 'color': 'red' });
-                    return false;
-                }
+          if (inputPassword.length === 0) {
+            $('#showPasswordError').html('**password must be filled');
+            $('#showPasswordError').css({ color: 'red' });
+            return false;
+          }
 
-                // enteredName == '' ? $('#showError').html('**username must be filled') : $('#showError').html('');
-                // $('#showError').css({ 'color': 'red' });
-                // return false;
-
-                // enteredName.length <= 2 || enteredName.length >= 26 ? $('#showError').html('**username must be between 3 and 26') : $('#showError').html('');
-                // $('#showError').css({ 'color': 'red' });
-                // return false;
-            });
+          if (inputPassword.length <= 2 || inputPassword.length >= 26) {
+            $('#showPasswordError').html('**password must be between 3 and 26');
+            $('#showPasswordError').css({ color: 'red' });
+            return false;
+          }
         });
-
+      });
     </script>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
